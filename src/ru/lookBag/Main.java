@@ -1,4 +1,5 @@
 package ru.lookBag;
+import javax.xml.crypto.dsig.spec.HMACParameterSpec;
 import java.util.Arrays;
 
 public class Main {
@@ -24,10 +25,20 @@ public class Main {
 
     // 2 задача
 
-        Arrays.sort(myGenerateArray);
+        int minValue = 2147483647;
+        int maxValue = -2147483648;
 
-        System.out.println("Минимальная сумма трат за день составила " + myGenerateArray[0] + " рублей");
-        System.out.println("Максимальная сумма трат за день составила " + myGenerateArray[daysOfMonth - 1] + " рублей");
+        for (int i = 0; i < myGenerateArray.length; i++) {
+            if(maxValue < myGenerateArray[i]){
+                maxValue = myGenerateArray[i];
+            } else if(minValue > myGenerateArray[i]){
+                minValue = myGenerateArray[i];
+            } else {
+                continue;
+            }
+        }
+        System.out.println("Минимальная сумма трат за день составила " + minValue + " рублей");
+        System.out.println("Максимальная сумма трат за день составила " + maxValue + " рублей");
 
         System.out.println();
 
@@ -46,6 +57,23 @@ public class Main {
 
         for (int i = reverseFullName.length - 1; i >= 0; i--) {
             System.out.print(reverseFullName[i]);
+        }
+
+        System.out.println(); System.out.println();
+
+    // 5 задача
+
+        int[][] matrix = new int[3][3];
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; column < matrix[0].length; column++) {
+                if(row % 2 == 0 && column % 2 == 0) {
+                    matrix[column][row] = 1;
+                } else if(row % 2 == 1 && column % 2 == 1) {
+                    matrix[column][row] = 1;
+                }
+                System.out.print(matrix[column][row] + " ");
+            }
+        System.out.println();
         }
 
     }

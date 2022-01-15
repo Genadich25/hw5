@@ -105,7 +105,7 @@ public class Main {
 
     // 7 задача
 
-        int[] justArray2 = {9, 3, 2, 8, 5};
+        int[] justArray2 = {5, 4, 3, 2, 1};
         int lastIndexJustArray2 = justArray2.length - 1;
         int middleIndex = (justArray2.length - 1) / 2;
         int storage;
